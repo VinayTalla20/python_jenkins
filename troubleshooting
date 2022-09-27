@@ -1,0 +1,24 @@
+installing kerbos  for jenkins authentication
+
+Download tarball from  https://pypi.org/project/kerberos/#files
+
+run setup.py using python
+
+command:  python3 setup.py build
+
+Error:   krb5-config: not found
+
+sudo apt-get install libkrb5-dev
+
+To test kerbos
+
+generate API Token from jenkins --->> from profile section
+
+use below script to authentication using kerbos
+
+
+import jenkins
+
+server = jenkins.Jenkins('http://192.168.X.XXX:8080', username='username', password='generated API TOKEN')
+print (server.jobs_count())
+
